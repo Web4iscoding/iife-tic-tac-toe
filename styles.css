@@ -1,0 +1,87 @@
+* {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+html {
+    font-size: 0.625;
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
+body > div:last-of-type {
+    position: relative;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.gameboard{ 
+    width: 50vmin;  
+    height: 50vmin;
+    border: 2px solid white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+}
+
+.gameboard > div {
+    border: 2px dotted white;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+}
+
+.gameboard + div {
+    position: absolute;
+    bottom: 15vh;
+}
+
+.player1, .player2 {
+    position: fixed;
+    height: 40%;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player1 {
+    top: 30%;
+    left: 20vw;
+    z-index: 1;
+}
+
+.player2 {
+    top: 30%;
+    right: 20vw;
+    z-index: 1;
+}
+
+input {
+    height: 10vh;
+    appearance: none;
+    border: 2px solid white;
+    text-align: center;
+    font-size: inherit;
+    border-radius: 15px;
+    outline: none;
+}
+
+.player1 > input:focus, .player1 > input:hover {
+    border: 2px solid red;
+}
+
+.player2 > input:focus, .player2 > input:hover {
+    border: 2px solid green;
+}
